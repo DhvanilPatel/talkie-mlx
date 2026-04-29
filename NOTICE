@@ -1,0 +1,13 @@
+Talkie MLX
+Copyright 2026 Dhvanil Patel
+
+This project provides an unofficial MLX implementation and conversion tools
+for the Talkie-1930 model family.
+
+Talkie-1930 is developed by the Talkie LM authors and distributed separately
+at https://github.com/talkie-lm/talkie and https://huggingface.co/talkie-lm.
+This repository does not include Talkie model weights.
+
+Portions of the model architecture are based on the public Talkie PyTorch
+implementation. The MLX-LM custom-model integration follows public mlx-lm
+extension patterns.

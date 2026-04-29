@@ -1,0 +1,26 @@
+.DS_Store
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.venv/
+.venv*/
+dist/
+build/
+
+# Large local model artifacts. Do not commit converted weights.
+*.safetensors
+*.ckpt
+*.pt
+*.pth
+talkie-*-mlx/
+models/
+outputs.jsonl
+
+# Local experiments
+*.mp4
+*.mov
+*.png
+*.jpg

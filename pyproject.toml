@@ -1,0 +1,64 @@
+[build-system]
+requires = ["hatchling>=1.26"]
+build-backend = "hatchling.build"
+
+[project]
+name = "talkie-mlx"
+version = "0.1.0"
+description = "Unofficial MLX runner and converter for Talkie-1930 on Apple Silicon"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "Apache-2.0"
+authors = [
+  { name = "Dhvanil Patel" }
+]
+keywords = ["mlx", "mlx-lm", "talkie", "llm", "apple-silicon"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: Apache Software License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+  "huggingface-hub>=0.25",
+  "mlx>=0.30",
+  "mlx-lm>=0.31",
+  "numpy>=1.26",
+  "tiktoken>=0.7",
+  "torch>=2.4",
+  "transformers>=4.45",
+]
+
+[project.optional-dependencies]
+dev = [
+  "build>=1.2",
+  "pytest>=8.0",
+  "ruff>=0.8",
+]
+
+[project.scripts]
+talkie-mlx-batch = "talkie_mlx.cli:batch_main"
+talkie-mlx-chat = "talkie_mlx.cli:chat_main"
+talkie-mlx-convert = "talkie_mlx.convert:main"
+
+[project.urls]
+Homepage = "https://github.com/DhvanilPatel/talkie-mlx"
+Repository = "https://github.com/DhvanilPatel/talkie-mlx"
+Issues = "https://github.com/DhvanilPatel/talkie-mlx/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/talkie_mlx"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
