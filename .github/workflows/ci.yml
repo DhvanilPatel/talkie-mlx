@@ -5,6 +5,9 @@ on:
   push:
     branches: [main]
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 jobs:
   test:
     name: Test
@@ -21,6 +24,8 @@ jobs:
 
       - name: Set up uv
         uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: false
 
       - name: Install package
         run: uv pip install --system -e ".[dev]"
